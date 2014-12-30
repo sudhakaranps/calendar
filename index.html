@@ -12,6 +12,11 @@ function showDate(){var e=$("#date option:selected").val();var t=$("#month optio
 <style>
 body{width:600px;margin:0 auto;background:#ddd}#error{background:#ebcccc;padding:5px;color:#ed541d;display:none;width:200px;border-radius:5px;border:1px solid #ed541d;margin-left:20px}input,select{padding:5px}
 </style>
+
+<!-- Disable print & right-click behavior -->
+  <style type="text/css" media="print"> img { display: none; } </style>
+  <script> document.oncontextmenu = new Function('return false'); </script>
+  
 </head>
 
 <body>
