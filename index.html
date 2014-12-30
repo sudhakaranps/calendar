@@ -15,7 +15,10 @@ body{width:600px;margin:0 auto;background:#ddd}#error{background:#ebcccc;padding
 
 <!-- Disable print & right-click behavior -->
   <style type="text/css" media="print"> img { display: none; } </style>
-  <script> document.oncontextmenu = new Function('return false'); </script>
+  <script> 
+    document.oncontextmenu = new Function('return false'); 
+    $('img').on('dragstart', function(event) { event.preventDefault(); });
+  </script>
   
 </head>
 
