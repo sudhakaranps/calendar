@@ -6,7 +6,53 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-function showDate(){var e=$("#date option:selected").val();var t=$("#month option:selected").val();if(t<10){t="0"+t}var n=$("#year").val();if(e=="date"||t=="month"||n=="year"){$("#error").html("Choose Valid Date").show().fadeOut(4e3);return}var r=e+t+n;console.log(r);$("#image").html('<img src="http://www.tamildailycalendar.com/'+n+"/"+r+'.jpg" />')}$(function(){for(var e=1;e<=31;e++){$("#date").append('<option value="'+e+'">'+e+"</option>")}for(var t=1;t<=12;t++){$("#month").append('<option value="'+t+'">'+t+"</option>")}for(var n=2015;n>=2007;n--){$("#year").append('<option value="'+n+'">'+n+"</option>")}})
+function showDate() {
+    var e = $("#date option:selected").val();
+    var t = $("#month option:selected").val();
+    if (t < 10) {
+        t = "0" + t
+    }
+    var n = $("#year").val();
+    if (e == "date" || t == "month" || n == "year") {
+        $("#error").html("Choose Valid Date").show().fadeOut(4e3);
+        return
+    }
+    var r = e + t + n;
+    //console.log(r);
+    $("#image").html('<img src="http://www.tamildailycalendar.com/' + n + "/" + r + '.jpg" />')
+}
+$(function() {
+	
+	var d= new Date();
+	var day = d.getDate(), month = d.getMonth(), year = d.getFullYear();
+	
+    for (var e = 1; e <= 31; e++) {
+		if(day == e) {
+			$("#date").append('<option value="' + e + '" selected="selected">' + e + "</option>");
+		}
+		else {
+			$("#date").append('<option value="' + e + '">' + e + "</option>");
+		}
+    }
+    for (var t = 1; t <= 12; t++) {
+		if(month+1 == t) {
+			$("#month").append('<option value="' + t + '" selected="selected">' + t + "</option>");
+		}
+		else {
+			$("#month").append('<option value="' + t + '">' + t + "</option>");
+		}
+    }
+    for (var n = 2015; n >= 2007; n--) {
+		if(year == n) {
+			$("#year").append('<option value="' + n + '" selected="selected">' + n + "</option>");
+		}
+		else {
+			$("#year").append('<option value="' + n + '">' + n + "</option>");
+		}
+    }
+	
+	showDate();
+})
 </script>
 
 <style>
