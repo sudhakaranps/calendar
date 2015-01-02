@@ -19,7 +19,10 @@ function showDate() {
     }
     var r = e + t + n;
     //console.log(r);
-    $("#image").html('<img src="http://www.tamildailycalendar.com/' + n + "/" + r + '.jpg" />')
+    $("#image").html('<img src="http://www.tamildailycalendar.com/' + n + "/" + r + '.jpg" />');
+    $("#image img").error(function(){
+	$("#image").html("<h1>Invalid Date :-(</h1>")
+    });
 }
 $(function() {
 	
